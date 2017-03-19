@@ -27,7 +27,8 @@ var config = require('yargs')
         'v': 'debug',
         'a': 'C2:21:33:E3:C1:F0',
         'b': 'Pandora',
-        'p': 51826
+        'p': 51826,
+        's': "data"
     })
     //.config('config')
     .version()

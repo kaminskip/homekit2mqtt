@@ -18,6 +18,10 @@ module.exports = function (iface) {
             .on('get', function(callback) {
                 log.debug('< hap get', settings.name, 'TemperatureSensor', 'CurrentTemperature');
                 log.debug('> hap re_get', settings.name, mqttStatus[settings.topic.statusTemperature]);
+                if (settings.topic.identify) {
+                    log.debug('> mqtt', settings.topic.identify, settings.payload.identify);
+                    mqttPub(settings.topic.identify, settings.payload.identify);
+                }
                 callback(null, mqttStatus[settings.topic.statusTemperature]);
             });
 

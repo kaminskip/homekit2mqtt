@@ -162,13 +162,9 @@ function newAccessory(settings) {
 
 var createAccessory = {};
 
-function loadAccessory(acc, settings) {
+function loadAccessory(acc) {
     var file = 'accessories/' + acc + '.js';
     log.debug('loading', file);
-    if (settings.topic.identify) {
-        log.debug('> mqtt', settings.topic.identify, settings.payload.identify);
-        mqttPub(settings.topic.identify, settings.payload.identify);
-    }
     createAccessory[acc] = require(__dirname + '/' + file)({mqttPub, mqttSub, mqttStatus, log, newAccessory, Service, Characteristic});
 }
 

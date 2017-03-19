@@ -6,6 +6,9 @@
       "identify": "homekit/TemperatureSensorLoft/get",
       "statusTemperature": "homekit/TemperatureSensorLoft/temp"
     },
+    "payload": {
+      "identify": "temp"
+    },
     "manufacturer": "Pandora",
     "model": "0.1"
   },
@@ -16,6 +19,9 @@
     "topic": {
       "identify": "homekit/TemperatureSensorBedroom/get",
       "statusTemperature": "homekit/TemperatureSensorBedroom/temp"
+    },
+    "payload": {
+      "identify": "temp"
     },
     "manufacturer": "Pandora",
     "model": "0.1"
@@ -28,6 +34,9 @@
       "identify": "homekit/TemperatureSensorSalon/get",
       "statusTemperature": "homekit/TemperatureSensorSalon/temp"
     },
+    "payload": {
+      "identify": "temp"
+    },
     "manufacturer": "Pandora",
     "model": "0.1"
   },
@@ -38,6 +47,9 @@
     "topic": {
       "identify": "homekit/TemperatureSensorGarage/get",
       "statusTemperature": "homekit/TemperatureSensorGarage/temp"
+    },
+    "payload": {
+      "identify": "temp"
     },
     "manufacturer": "Pandora",
     "model": "0.1"
@@ -52,6 +64,7 @@
       "statusOn":    "homekit/LampBedroom/status"
     },
     "payload": {
+      "identify": "relayState",
       "onTrue": 1,
       "onFalse": 0
     },
@@ -68,6 +81,7 @@
       "statusOn":    "homekit/LampSalon/status"
     },
     "payload": {
+      "identify": "relayState",
       "onTrue": 1,
       "onFalse": 0
     },
@@ -84,6 +98,7 @@
       "statusDoor":  "homekit/Garage/statusDoor"
     },
     "payload": {
+      "identify": "garageState",
       "doorOpen": 0,
       "doorClosed": 1,
       "doorOpening": 2,

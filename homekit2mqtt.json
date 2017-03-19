@@ -78,7 +78,10 @@
     },
     "payload": {
       "doorOpen": 0,
-      "doorClosed": 1
+      "doorClosed": 1,
+      "doorOpening": 2,
+      "doorClosing": 3,
+      "doorStopped": 4
     },
     "manufacturer": "Pandora",
     "model": "0.1"

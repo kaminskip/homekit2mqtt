@@ -11,6 +11,9 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "start": "node index.js > server.log &",
+    "stop": "echo \"Error: no restart specified\" && exit 1",
+    "restart": "echo \"Error: no restart specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian 'hobbyquaker' Raff <hq@ccu.io> (https://github.com/hobbyquaker)",

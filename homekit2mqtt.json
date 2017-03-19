@@ -1,0 +1,86 @@
+{
+  "TemperatureSensorLoft": {
+    "service": "TemperatureSensor",
+    "name": "Temperature Loft",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorLoft/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "TemperatureSensorBedroom": {
+    "service": "TemperatureSensor",
+    "name": "Temperature Bedroom",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorBedroom/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "TemperatureSensorSalon": {
+    "service": "TemperatureSensor",
+    "name": "Temperature Salon",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorSalon/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "TemperatureSensorGarage": {
+    "service": "TemperatureSensor",
+    "name": "Temperature Garage",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorGarage/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "LampBedroom": {
+    "service":  "Lightbulb",
+    "name":     "Lamp Bedroom",
+    "topic": {
+      "setOn":          "homekit/LampBedroom/set",
+      "statusOn":       "homekit/LampBedroom/status"
+    },
+    "payload": {
+      "onTrue": 1,
+      "onFalse": 0
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "LampSalon": {
+    "service":  "Lightbulb",
+    "name":     "Lamp Salon",
+    "topic": {
+      "setOn":          "homekit/LampSalon/set",
+      "statusOn":       "homekit/LampSalon/status"
+    },
+    "payload": {
+      "onTrue": 1,
+      "onFalse": 0
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "LockGarage": {
+    "service": "GarageDoorOpener",
+    "name": "Garage",
+    "topic": {
+      "setDoor": "homekit/Garage/setDoor",
+      "statusDoor": "homekit/Garage/statusDoor"
+    },
+    "payload": {
+      "doorOpen": 0,
+      "doorClosed": 1
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  }
+}

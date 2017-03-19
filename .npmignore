@@ -2,3 +2,5 @@
 conf
 index.js.orig
 todo
+data/
+server.log

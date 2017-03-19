@@ -20,13 +20,13 @@ var config = require('yargs')
         's': 'storagedir'
     })
     .default({
-        'c': '031-45-154',
+        'c': '239-05-734',
         'u': 'mqtt://127.0.0.1',
         'n': 'homekit',
-        'm': __dirname + '/example-homekit2mqtt.json',
-        'v': 'info',
-        'a': 'CC:22:3D:E3:CE:F6',
-        'b': 'MQTT Bridge',
+        'm': __dirname + '/homekit2mqtt.json',
+        'v': 'debug',
+        'a': 'C2:21:33:E3:C1:F0',
+        'b': 'Pandora',
         'p': 51826
     })
     //.config('config')

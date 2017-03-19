@@ -85,6 +85,10 @@ module.exports = function (iface) {
                         log.debug('> hap re_get', settings.name, 'CurrentDoorState.OPEN');
                         callback(null, Characteristic.CurrentDoorState.OPEN);
                     }
+                    if (settings.topic.identify) {
+                        log.debug('> mqtt', settings.topic.identify, settings.payload.identify);
+                        mqttPub(settings.topic.identify, settings.payload.identify);
+                    }
                 });
         }
 

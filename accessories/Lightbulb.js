@@ -41,6 +41,10 @@ module.exports = function (iface) {
                 log.debug('< hap get', settings.name, 'On');
                 var on = mqttStatus[settings.topic.statusOn] !== settings.payload.onFalse;
                 log.debug('> hap re_get', settings.name, 'On', on);
+                if (settings.topic.identify) {
+                    log.debug('> mqtt', settings.topic.identify, settings.payload.identify);
+                    mqttPub(settings.topic.identify, settings.payload.identify);
+                }
                 callback(null, on);
             });
 

@@ -3,6 +3,7 @@
     "service": "TemperatureSensor",
     "name": "Temperature Loft",
     "topic": {
+      "identify": "homekit/TemperatureSensorLoft/get",
       "statusTemperature": "homekit/TemperatureSensorLoft/temp"
     },
     "manufacturer": "Pandora",
@@ -13,6 +14,7 @@
     "service": "TemperatureSensor",
     "name": "Temperature Bedroom",
     "topic": {
+      "identify": "homekit/TemperatureSensorBedroom/get",
       "statusTemperature": "homekit/TemperatureSensorBedroom/temp"
     },
     "manufacturer": "Pandora",
@@ -23,6 +25,7 @@
     "service": "TemperatureSensor",
     "name": "Temperature Salon",
     "topic": {
+      "identify": "homekit/TemperatureSensorSalon/get",
       "statusTemperature": "homekit/TemperatureSensorSalon/temp"
     },
     "manufacturer": "Pandora",
@@ -33,6 +36,7 @@
     "service": "TemperatureSensor",
     "name": "Temperature Garage",
     "topic": {
+      "identify": "homekit/TemperatureSensorGarage/get",
       "statusTemperature": "homekit/TemperatureSensorGarage/temp"
     },
     "manufacturer": "Pandora",
@@ -43,8 +47,9 @@
     "service":  "Lightbulb",
     "name":     "Lamp Bedroom",
     "topic": {
-      "setOn":          "homekit/LampBedroom/set",
-      "statusOn":       "homekit/LampBedroom/status"
+      "identify":    "homekit/LampBedroom/status",
+      "setOn":       "homekit/LampBedroom/set",
+      "statusOn":    "homekit/LampBedroom/status"
     },
     "payload": {
       "onTrue": 1,
@@ -58,8 +63,9 @@
     "service":  "Lightbulb",
     "name":     "Lamp Salon",
     "topic": {
-      "setOn":          "homekit/LampSalon/set",
-      "statusOn":       "homekit/LampSalon/status"
+      "identify":    "homekit/LampSalon/status",
+      "setOn":       "homekit/LampSalon/set",
+      "statusOn":    "homekit/LampSalon/status"
     },
     "payload": {
       "onTrue": 1,
@@ -73,8 +79,9 @@
     "service": "GarageDoorOpener",
     "name": "Garage",
     "topic": {
-      "setDoor": "homekit/Garage/setDoor",
-      "statusDoor": "homekit/Garage/statusDoor"
+      "identify":    "homekit/Garage/status",
+      "setDoor":     "homekit/Garage/setDoor",
+      "statusDoor":  "homekit/Garage/statusDoor"
     },
     "payload": {
       "doorOpen": 0,

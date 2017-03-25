@@ -65,8 +65,8 @@
     },
     "payload": {
       "identify": "relayState",
-      "onTrue": 1,
-      "onFalse": 0
+      "onTrue": true,
+      "onFalse": false
     },
     "manufacturer": "Pandora",
     "model": "0.1"
@@ -82,8 +82,8 @@
     },
     "payload": {
       "identify": "relayState",
-      "onTrue": 1,
-      "onFalse": 0
+      "onTrue": true,
+      "onFalse": false
     },
     "manufacturer": "Pandora",
     "model": "0.1"

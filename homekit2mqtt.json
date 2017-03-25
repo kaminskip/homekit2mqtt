@@ -59,14 +59,12 @@
     "service":  "Lightbulb",
     "name":     "Lamp Bedroom",
     "topic": {
-      "identify":    "homekit/LampBedroom/status",
       "setOn":       "homekit/LampBedroom/set",
       "statusOn":    "homekit/LampBedroom/status"
     },
     "payload": {
-      "identify": "relayState",
-      "onTrue": true,
-      "onFalse": false
+      "onTrue": 1,
+      "onFalse": 0
     },
     "manufacturer": "Pandora",
     "model": "0.1"
@@ -76,14 +74,12 @@
     "service":  "Lightbulb",
     "name":     "Lamp Salon",
     "topic": {
-      "identify":    "homekit/LampSalon/status",
       "setOn":       "homekit/LampSalon/set",
       "statusOn":    "homekit/LampSalon/status"
     },
     "payload": {
-      "identify": "relayState",
-      "onTrue": true,
-      "onFalse": false
+      "onTrue": 1,
+      "onFalse": 0
     },
     "manufacturer": "Pandora",
     "model": "0.1"

@@ -9,12 +9,13 @@ module.exports = function (iface) {
         light.addService(Service.Lightbulb, settings.name)
             .getCharacteristic(Characteristic.On)
             .on('set', function (value, callback) {
-                log.debug('< hap set', settings.name, 'On', value);
-                var payload = value ? settings.payload.onTrue : settings.payload.onFalse;
+                var setOn = value === 1;
+                log.debug('< hap set', settings.name, 'On', setOn);
+                var payload = setOn ? settings.payload.onTrue : settings.payload.onFalse;
                 if (mqttStatus[settings.topic.statusOn] !== payload) {
                     // this should prevent flickering while dimming lights that use
                     // the same topic for On and Brightness, e.g. Homematic Dimmers
-                    if ((settings.topic.setOn !== settings.topic.setBrightness) || !value) {
+                    if ((settings.topic.setOn !== settings.topic.setBrightness) || !setOn) {
                         log.debug('> mqtt', settings.topic.setOn, payload);
                         mqttPub(settings.topic.setOn, payload);
                     } else {
@@ -29,7 +30,10 @@ module.exports = function (iface) {
             });
 
         mqttSub(settings.topic.statusOn, function (val) {
-            var on = mqttStatus[settings.topic.statusOn] !== settings.payload.onFalse;
+            var setOn = val === 1;
+            var payload = setOn ? settings.payload.onTrue : settings.payload.onFalse;
+            mqttStatus[settings.topic.statusOn] = payload;
+            var on = mqttStatus[settings.topic.statusOn] === settings.payload.onTrue;
             log.debug('> hap set', settings.name, 'On', on);
             light.getService(Service.Lightbulb)
                 .updateCharacteristic(Characteristic.On, on);
@@ -39,7 +43,7 @@ module.exports = function (iface) {
             .getCharacteristic(Characteristic.On)
             .on('get', function (callback) {
                 log.debug('< hap get', settings.name, 'On');
-                var on = mqttStatus[settings.topic.statusOn] !== settings.payload.onFalse;
+                var on = mqttStatus[settings.topic.statusOn] === settings.payload.onTrue;
                 log.debug('> hap re_get', settings.name, 'On', on);
                 if (settings.topic.identify) {
                     log.debug('> mqtt', settings.topic.identify, settings.payload.identify);
